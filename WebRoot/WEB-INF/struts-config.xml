@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>  
+    <form-beans>  
+     <!--配置第一个ActionForm，指定ActionForm的name 和type 属性 
+   	  该Forward对象的name 属性为login. 映射资源为/WEB-INF/user/login.jsp 
+             <global-forwards>  
+              
+            <forward name="login" path="/login.jsp" />  
+        </global-forwards> 
+     --> 
+        <form-bean name="bankForm"  
+            type="InfoForms.bankForm"> 
+        </form-bean>  
+    </form-beans>  
+
+     <global-exceptions>
+		<exception key="aaaerrorsddasbc.exception" 
+			type="Exception.ErrorCodeException" 
+				handler="Exception.ErrorCodeExceptionHandler" 
+				path="/user/errors.jsp"/>
+	</global-exceptions>  
+    <action-mappings> 
+    	<!-- 登陆页面跳转 -->  
+		<action path="/user/login"
+				type="InfoAction.loginaction"
+		>
+			<forward name="fail" path="/user/login.jsp"/>	
+			<forward name="success" path="/user/msg2.jsp"/>
+		</action>
+		<!-- 注册页面跳转 -->  
+		<action path="/user/regist"
+				type="InfoAction.registaction"
+		>
+			<forward name="success" path="/user/login.jsp"/>
+		</action>
+        <!-- 动态dispatcherAction--> 
+        <action path="/bankdate/item"
+				type="InfoAction.BankAction"
+				name="bankForm"
+				parameter="command"
+		>
+				<forward name="show" path="/user/msg2.jsp"/>
+				<forward name="inquiry" path="/user/inquiry1.jsp"/>
+				<forward name="exitsys" path="/user/login.jsp"/>
+		</action> 
+    </action-mappings> 
+    <message-resources parameter="res.MessageResources" />
+</struts-config>  
