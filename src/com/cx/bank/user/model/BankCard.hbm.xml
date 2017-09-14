@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cx.bank.user.model">
+	<class name="BankCard" table="t_bank_card">
+		<id name="bankId" >
+			<generator class="native"/>
+		</id>
+		<discriminator column="category" type="string"/>
+		
+		<property name="psd" not-null="false"/>
+		<property name="city"/>
+		<property name="telPhone"/>
+		<property name="creatDate"/>
+		<property name="bankMoney"/>
+		<many-to-one name="bankUser" column="IDCredit"/>
+		
+		<subclass name="CreditCard" discriminator-value="card_credit"/>
+		<subclass name="DepositeCard" discriminator-value="card_deposit"/>
+	</class>
+</hibernate-mapping>

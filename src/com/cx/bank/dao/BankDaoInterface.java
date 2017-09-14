@@ -3,7 +3,7 @@
 
    import java.io.IOException;
 
-import com.cx.bank.model.UserBean;
+import com.cx.bank.user.model.User;
 
      /**
       * 
@@ -23,13 +23,13 @@ import com.cx.bank.model.UserBean;
 	   * @param name 用户名
 	   * @param psd 密码
 	   */
-	   public boolean register(UserBean user);
+	   public boolean register(User bankUser);
 	   /**
 		 * 登录
 		 * @param user
 		 *  
 		 */
-		public boolean login(UserBean user);
+		public boolean login(User bakUser);
 		 /**
 		 * 取得余额方法
 		 * @param 转出账号

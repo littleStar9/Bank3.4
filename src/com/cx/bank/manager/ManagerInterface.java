@@ -3,7 +3,8 @@
  import java.io.IOException;
 
 import com.cx.bank.model.UserBean;
- import com.cx.bank.util.AccountOverDrawnException;
+import com.cx.bank.user.model.User;
+import com.cx.bank.util.AccountOverDrawnException;
 import com.cx.bank.util.InvalidDepositException;
 
   /**
@@ -12,17 +13,18 @@ import com.cx.bank.util.InvalidDepositException;
    */
   public interface ManagerInterface {
 	  
-	  /**
-		 * 注册
-		 * @param user 封装用户名，密码
-		 */
-  public boolean register(String name, String psd); 
-	
+	/**
+	 	* 注册
+		* @param user 封装用户名，密码
+	*/
+//  public boolean register(String name, String psd, String IDCredit); 
+	 public boolean register(String name,String psd,String ID); 
   /**
 	 * 登录
 	 * @param user 封装用户名，密码
 	 */
-	public boolean login(String name, String psd);
+	//public boolean login(String name, String psd);
+	 public boolean login(String unm, String psd);
 	/**
 	 * 存款
 	 * @param money

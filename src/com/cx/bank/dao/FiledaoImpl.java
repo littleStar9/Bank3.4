@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import com.cx.bank.model.MoneyBean;
 import com.cx.bank.model.UserBean;
+import com.cx.bank.user.model.User;
 import com.cx.bank.util.MD5;
 
 import Exception.ErrorCodeException;
@@ -173,6 +174,16 @@ import Exception.ErrorCodeException;
 			  FileOutputStream out=new FileOutputStream(inAccount+".properties");
 			  props.store(out,inAccount+".properties");
 			  out.close();//关闭文件流
+		}
+		@Override
+		public boolean register(User bankUser) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+		@Override
+		public boolean login(User bakUser) {
+			// TODO Auto-generated method stub
+			return false;
 		}
 
   

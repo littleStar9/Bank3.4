@@ -68,7 +68,7 @@
 							</div>
 							<br/>
 							<div class="group">
-							邮　箱：<input type="text" class="input" name="email" value=""/>
+							身份证号：<input type="text" class="input" name="email" value=""/>
 							<span style="color: red; font-weight: 900">${errors.email}</span>
 							</div>
 							<br/>

@@ -19,6 +19,7 @@
 			<attribute name="owner.project.facets" value="jst.web.jstl"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HIBER"/>
 	<classpathentry kind="lib" path="D:/d/总文件夹/java校内实训/实训课件/struts/struts_actionmapping/WebRoot/WEB-INF/lib/struts.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

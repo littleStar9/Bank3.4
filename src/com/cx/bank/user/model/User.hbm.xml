@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cx.bank.user.model">
+	<class name="User" table="t_user">
+		<id name="IDCredit">
+			<generator class="assigned"/>
+		</id>
+		<property name="userName" not-null="false"/>
+		<property name="telphone"/>
+		<property name="sex"/>
+		<property name="city"/>
+		<set name="bankCards" inverse="true" cascade="all">
+			<key column="IDCredit"/>
+			<one-to-many class="BankCard"/>
+		</set>
+	</class>
+</hibernate-mapping>
